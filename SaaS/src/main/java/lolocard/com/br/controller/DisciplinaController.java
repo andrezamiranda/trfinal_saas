@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -36,10 +37,24 @@ public class DisciplinaController {
 
     }
 
+
     @RequestMapping("/buscar/{id}")
     public DisciplinaEntity buscaId(@PathVariable("id") Integer id){
 
         return disciplinaRepository.findOne(id);
+
+    }
+
+    @RequestMapping("/deletar/{id}")
+    public String deletaId(@PathVariable("id") Integer id){
+
+        DisciplinaEntity disciplina = disciplinaRepository.findOne(id);
+
+        String nomeDisciplina = disciplina.getNome();
+
+        disciplinaRepository.delete(id);
+
+        return "Disciplina " + id + " - " + nomeDisciplina + " excluida com sucesso.";
 
     }
 

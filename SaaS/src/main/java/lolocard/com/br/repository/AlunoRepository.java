@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 /**
  * Created by resource on 02/04/2017.
  */
-public interface AlunoRepository extends JpaRepository<AlunoEntity, Long>{
+public interface AlunoRepository extends JpaRepository<AlunoEntity, Integer>{
 }

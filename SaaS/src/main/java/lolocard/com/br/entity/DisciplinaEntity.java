@@ -13,6 +13,18 @@ public class DisciplinaEntity {
     private String cargaHoraria;
     private String descricao;
 
+    public DisciplinaEntity() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+    public DisciplinaEntity(String nome, String cargaHoraria, String descricao) {
+        super();
+        this.nome = nome;
+        this.cargaHoraria = cargaHoraria;
+        this.descricao = descricao;
+    }
+
     @Id
     @Column(name = "cod_disciplina")
     public int getCodDisciplina() {
